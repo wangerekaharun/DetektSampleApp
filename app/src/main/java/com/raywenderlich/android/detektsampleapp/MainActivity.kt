@@ -34,23 +34,42 @@
 
 package com.raywenderlich.android.detektsampleapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.raywenderlich.android.detektsampleapp.databinding.ActivityMainBinding
 
 /**
  * Main Screen
  */
 class MainActivity : AppCompatActivity() {
+  private lateinit var binding: ActivityMainBinding
+  private val rulesAdapter = RulesAdapter { rulesModel ->
+    onRuleClick(rulesModel)
+  }
 
   override fun onCreate(savedInstanceState: Bundle?) {
     // Switch to AppTheme for displaying the activity
     setTheme(R.style.AppTheme)
 
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+    binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-    // Your code
+    initView()
 
+  }
+
+  fun onRuleClick(rulesModel: RulesModel) {
+    val ruleIntent = Intent(applicationContext, RulesWebViewActivity::class.java)
+    ruleIntent.putExtra("rulesUrl", rulesModel.url)
+    startActivity(ruleIntent)
+  }
+
+
+  fun initView(){
+    rulesAdapter.submitList(detektRules)
+    binding.rvRules. adapter = rulesAdapter
 
   }
 }
