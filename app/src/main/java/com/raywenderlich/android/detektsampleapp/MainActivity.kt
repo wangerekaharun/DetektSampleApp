@@ -38,6 +38,10 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.android.detektsampleapp.databinding.ActivityMainBinding
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 /**
  * Main Screen
@@ -57,6 +61,7 @@ class MainActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     initView()
+    runBlocking {  coroutineTestRules() }
 
   }
 
@@ -72,4 +77,47 @@ class MainActivity : AppCompatActivity() {
     binding.rvRules. adapter = rulesAdapter
 
   }
+
+  suspend fun coroutineTestRules() {
+    GlobalScope.launch {
+      delay(2000)
+    }
+  }
+
+  private fun complexMethod(
+    name: String,
+    email: String,
+    phone: String,
+    address: String,
+    zipCode: String,
+    city: String,
+    country: String
+  ):String {
+     return name
+  }
+
+  private fun emptyMethod(){
+
+  }
+
+  override fun toString(): String {
+    throw IllegalStateException()
+  }
+
+  fun performanceIssues(){
+    (1..19).forEach {
+      print(it.toString())
+    }
+  }
+
+  fun potentialBugs(){
+    val test = when("type"){
+      "main" -> 1
+      "main" -> 2
+      else -> 3
+    }
+
+  }
+
+
 }

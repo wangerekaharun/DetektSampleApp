@@ -12,9 +12,9 @@ class RulesWebViewActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRulesWebViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val rulesUrl = intent.getStringExtra("rulesUrl")
+        val RulesUrl = intent.getStringExtra("rulesUrl")
 
         val webView: WebView = binding.webView
-        rulesUrl?.let { webView.loadUrl(it) }
+        RulesUrl?.let { webView.loadUrl(it) }
     }
 }
