@@ -50,6 +50,8 @@ class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMainBinding
   private val rulesAdapter = RulesAdapter { rulesModel ->
     onRuleClick(rulesModel)
+
+    
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
