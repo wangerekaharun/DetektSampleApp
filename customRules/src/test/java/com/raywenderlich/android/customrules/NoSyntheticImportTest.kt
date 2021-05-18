@@ -1,5 +1,6 @@
 package com.raywenderlich.android.customrules
 
+import com.raywenderlich.android.customrules.rules.NoSyntheticImportRule
 import io.gitlab.arturbosch.detekt.test.lint
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test

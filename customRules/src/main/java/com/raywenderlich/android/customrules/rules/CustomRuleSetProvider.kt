@@ -1,4 +1,4 @@
-package com.raywenderlich.android.customrules
+package com.raywenderlich.android.customrules.rules
 
 import io.gitlab.arturbosch.detekt.api.Config
 import io.gitlab.arturbosch.detekt.api.RuleSet
