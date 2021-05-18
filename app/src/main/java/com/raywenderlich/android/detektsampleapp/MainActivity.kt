@@ -50,6 +50,8 @@ class MainActivity : AppCompatActivity() {
   private lateinit var binding: ActivityMainBinding
   private val rulesAdapter = RulesAdapter { rulesModel ->
     onRuleClick(rulesModel)
+
+
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,6 +86,7 @@ class MainActivity : AppCompatActivity() {
     }
   }
 
+  @Suppress("UnusedPrivateMember")
   private fun complexMethod(
     name: String,
     email: String,
@@ -108,6 +111,10 @@ class MainActivity : AppCompatActivity() {
     (1..19).forEach {
       print(it.toString())
     }
+  }
+
+  @Suppress("UnusedPrivateMember")
+  fun suppressedWarning(){
   }
 
   fun potentialBugs(){
