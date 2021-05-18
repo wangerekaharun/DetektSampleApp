@@ -1,3 +1,3 @@
-custom-rule:
-  CustomRule:
+synthetic-import-rule:
+  NoSyntheticImportRule:
     active: true

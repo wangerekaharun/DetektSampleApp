@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: "io.gitlab.arturbosch.detekt"
+apply plugin: 'kotlin-android-extensions'
 
 android {
   compileSdkVersion rootProject.ext.compileSdkVersion
@@ -44,6 +45,8 @@ dependencies {
   androidTestImplementation 'androidx.test.ext:junit:1.1.2'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+
+  detekt "io.gitlab.arturbosch.detekt:detekt-cli:$detektVersion"
   detekt project(":customRules")
 
   // TUTORIAL DEPENDENCIES HERE
