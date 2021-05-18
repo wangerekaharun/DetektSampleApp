@@ -3,10 +3,4 @@ plugins {
 }
 
 dependencies {
-    compileOnly "io.gitlab.arturbosch.detekt:detekt-api:1.17.0-RC3"
-
-    testImplementation "io.gitlab.arturbosch.detekt:detekt-api:1.17.0-RC3"
-    testImplementation "io.gitlab.arturbosch.detekt:detekt-test:1.17.0-RC3"
-    testImplementation "org.assertj:assertj-core:3.19.0"
-    testImplementation 'junit:junit:4.13.2'
 }
