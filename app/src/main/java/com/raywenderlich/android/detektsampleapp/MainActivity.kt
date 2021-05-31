@@ -38,10 +38,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.android.detektsampleapp.databinding.ActivityMainBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
 /**
  * Main Screen
@@ -66,14 +62,14 @@ class MainActivity : AppCompatActivity() {
 
   }
 
-  fun onRuleClick(rulesModel: RulesModel) {
+  private fun onRuleClick(rulesModel: RulesModel) {
     val ruleIntent = Intent(applicationContext, RulesWebViewActivity::class.java)
     ruleIntent.putExtra("rulesUrl", rulesModel.url)
     startActivity(ruleIntent)
   }
 
 
-  fun initView(){
+  private fun initView(){
     rulesAdapter.submitList(detektRules)
     binding.rvRules. adapter = rulesAdapter
 
