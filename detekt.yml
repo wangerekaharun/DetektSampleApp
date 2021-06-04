@@ -24,16 +24,6 @@ console-reports:
   #  - 'FindingsReport'
   #  - 'BuildFailureReport'
 
-synthetic-import-rule:
-  active: true
-  NoSyntheticImportRule:
-    active: true
-
-coroutines:
-  active: true
-  GlobalCoroutineUsage:
-    active: true
-
 comments:
   active: true
   excludes: "**/test/**,**/androidTest/**,**/*.Test.kt,**/*.Spec.kt,**/*.Spek.kt"
