@@ -38,10 +38,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.android.detektsampleapp.databinding.ActivityMainBinding
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
 /**
  * Main Screen
@@ -63,68 +59,20 @@ class MainActivity : AppCompatActivity() {
     setContentView(binding.root)
 
     initView()
-    runBlocking {  coroutineTestRules() }
 
   }
 
-  fun onRuleClick(rulesModel: RulesModel) {
+  private fun onRuleClick(rulesModel: RulesModel) {
     val ruleIntent = Intent(applicationContext, RulesWebViewActivity::class.java)
     ruleIntent.putExtra("rulesUrl", rulesModel.url)
     startActivity(ruleIntent)
   }
 
 
-  fun initView(){
+  private fun initView(){
     rulesAdapter.submitList(detektRules)
     binding.rvRules. adapter = rulesAdapter
 
   }
-
-  suspend fun coroutineTestRules() {
-    GlobalScope.launch {
-      delay(2000)
-    }
-  }
-
-  @Suppress("UnusedPrivateMember")
-  private fun complexMethod(
-    name: String,
-    email: String,
-    phone: String,
-    address: String,
-    zipCode: String,
-    city: String,
-    country: String
-  ):String {
-     return name
-  }
-
-  private fun emptyMethod(){
-
-  }
-
-  override fun toString(): String {
-    throw IllegalStateException()
-  }
-
-  fun performanceIssues(){
-    (1..19).forEach {
-      print(it.toString())
-    }
-  }
-
-  @Suppress("UnusedPrivateMember")
-  fun suppressedWarning(){
-  }
-
-  fun potentialBugs(){
-    val test = when("type"){
-      "main" -> 1
-      "main" -> 2
-      else -> 3
-    }
-
-  }
-
 
 }

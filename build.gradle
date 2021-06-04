@@ -3,8 +3,7 @@
 buildscript {
 
   ext {
-    kotlin_version = '1.5.0'
-    ext.detektVersion = '1.17.0-RC3'
+    kotlin_version = '1.5.10'
     compileSdkVersion = 30
     targetSdkVersion = compileSdkVersion
     minSdkVersion = 19
@@ -19,26 +18,16 @@ buildscript {
   dependencies {
     classpath 'com.android.tools.build:gradle:4.2.1'
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.17.0-RC3"
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
   }
 }
 
-apply plugin: "io.gitlab.arturbosch.detekt"
-
 allprojects {
   repositories {
     google()
     mavenCentral()
-  }
-}
-
-subprojects {
-  detekt {
-    config = files("${project.rootDir}/detekt.yml")
-    parallel = true
   }
 }
 
